@@ -622,9 +622,8 @@ void redisFree(redisContext *c) {
         sdsfree(c->obuf);
     if (c->reader != NULL)
         redisReaderFree(c->reader);
-    /*if (c->tcp.host)
+    if (c->tcp.host)
         free(c->tcp.host);
-     */
     if (c->tcp.source_addr)
         free(c->tcp.source_addr);
     if (c->unix_sock.path)
